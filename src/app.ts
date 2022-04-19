@@ -1,42 +1,16 @@
-// Code Something. 
+import Patient, {Gender} from './lib/Patient';
+import TrackingSystem from './lib/TrackingSystem';
 
-enum Gender
-{
-	MALE,
-	FEMALE,
-	NON_BINARY,
-	OTHER
-}
-class Patient
-{
-	private id: number;
-	private name: string;
-	private age: number;
-	private gender: Gender;
-	private date: string;
-	private senderid: number;
+const miami = new TrackingSystem(31208);
 
-	constructor(id: number, name: string, age: number, gender: Gender, date: string, senderid: number)
-	{
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-		this.date = date;
-		this.senderid = senderid;
-	}
+const pat01 = new Patient(1, "Garret Boo", 28, Gender.MALE, "21/05/2021", 12);
+const pat02 = new Patient(2, "John Woo", 35, Gender.MALE, "12/05/2021", 1);
 
-	showStatus()
-	{
-		console.log("-- PATIENT STATUS --");
-		console.log(`
-			Name: ${this.name}\n
-			Age: ${this.age}\n
-			Gender: ${this.gender}\n
-			Declared Date: ${this.date}\n
-			Recieved From ID: ${this.senderid}\n
-		`)
-	}
-}
 
-const patient01 = new Patient(1, "Robert Dowson", 45, Gender.MALE, "23/10/2021", 5);
+miami.addPatient(pat01);
+miami.addPatient(pat02);
+
+miami.displayPatientList();
+
+miami.trackByID(1);
+miami.trackByName("John Woo");
