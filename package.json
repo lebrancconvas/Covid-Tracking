@@ -1,8 +1,8 @@
 {
-    "name": "app",
+    "name": "typescript_project_template",
     "version": "1.0.0",
     "main": "index.js",
-    "repository": "https://github.com/lebrancconvas/News-Anchor-Reporter-Cheerio.git",
+    "repository": "https://github.com/lebrancconvas/Typescript-Project-Template.git",
     "author": "lebrancconvas <lebrancconvas@gmail.com>",
     "license": "MIT",
     "scripts": {
