@@ -51,7 +51,7 @@ class TrackingSystem
 
 		patientList.map((_, index) => 
 		{
-			if(searchName === patientList[index].getName())
+			if(searchName.toUpperCase() === patientList[index].getName().toUpperCase())
 			{
 				isFind = true;
 				indexTrack = patientList[index].getID() - 1;
