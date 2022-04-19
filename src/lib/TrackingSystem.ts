@@ -16,7 +16,7 @@ class TrackingSystem
 		this.serialID = id;
 	}
 
-	getPatient(patient: Patient)
+	addPatient(patient: Patient)
 	{
 		patientList.push(patient);
 	}
@@ -28,9 +28,24 @@ class TrackingSystem
 
 	trackByID(searchID: number)
 	{
-		const data = Timeline[searchID - 1];
-		const result = data.timeline;
-		console.log(result);
+		let isFind: boolean = false;
+
+		patientList.map((_, index) => 
+		{
+			if(searchID === patientList[index].getID())
+			{
+				isFind = true;
+			}
+		});
+
+		if(isFind)
+		{
+			console.log(Timeline[searchID - 1].timeline);
+		}
+		else
+		{
+			console.log("Cannot Find the patient, Please try again.");
+		}
 	}
 
 	trackByName()
@@ -39,15 +54,3 @@ class TrackingSystem
 	}
 }
 
-const mintra = new TrackingSystem(12113);
-const madman = new Patient(16, "Madman", 19, Gender.MALE, "12/03/2022", 43);
-const madwoman = new Patient(18, "Madwoman", 19, Gender.FEMALE, "12/03/2022", 43);
-
-// Implementation.
-mintra.displayPatientList();
-
-mintra.getPatient(madman);
-mintra.displayPatientList();
-
-mintra.getPatient(madwoman);
-mintra.displayPatientList(); 
