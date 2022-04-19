@@ -48,9 +48,30 @@ class TrackingSystem
 		}
 	}
 
-	trackByName()
+	trackByName(searchName: string)
 	{
-		
+		let isFind: boolean = false;
+		let indexTrack: number = 0;
+
+		patientList.map((_, index) => 
+		{
+			if(searchName === patientList[index].getName())
+			{
+				isFind = true;
+				indexTrack = patientList[index].getID() - 1;
+			}
+		});
+
+		if(isFind)
+		{
+			console.log(Timeline[indexTrack].timeline);
+		}
+		else
+		{
+			console.log("Cannot Find the patient, Please try again.");
+		}
 	}
 }
+
+
 
