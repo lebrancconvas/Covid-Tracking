@@ -1,7 +1,3 @@
-// Feature 
-// 1.) Searching By Name
-// 2.) Searching By ID
-
 import Patient, {Gender} from './Patient';
 const Timeline = require('../../data/timeline.json');
 
@@ -73,5 +69,4 @@ class TrackingSystem
 	}
 }
 
-
-
+export default TrackingSystem; 
